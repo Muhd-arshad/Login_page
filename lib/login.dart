@@ -72,6 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                     if(value!.isEmpty){
                       return 'Password required';
                     }
+                    
                   },
                 ),
                 const SizedBox(
@@ -92,6 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                         controlPssword.text == '12345') {
                       var pref = await SharedPreferences.getInstance();
                       pref.setBool('isLogged', true);
+                      // ignore: use_build_context_synchronously
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
